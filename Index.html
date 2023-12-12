@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meteo App</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="app">
-    <header>
-    <form class="search-form" id="search-form"></form>
-    <input type="search" placeholder="Enter a City" required class="search-form-input" id="search-form-input">
-    <input type="submit" value="Search" class="search-form-button">
-</header>
-    <main>
+      <header>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a City"
+            required
+            class="search-form-input"
+            id="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+      <main>
         <div class="app-data">
-        <div>
-    <h1 id="city">London</h1>
-    <p>
-        Tuesday 22:11, overcast clouds
-        <br  />
-        Humidity: 86%, Wind: 2.9km/h
-    
-    </p>
-
-    </div>
-      <div class="temperature" id="temperature">☁️5°C</div>
+          <div>
+            <h1 id="city">London</h1>
+            <p>
+              Tuesday 22:11, overcast clouds
+              <br />
+              Humidity: 86%, Wind: 2.9km/h
+            </p>
+          </div>
+          <div class="temperature" id="temperature">☁️5°C</div>
         </div>
-    </main>
-    <footer>
-        Coded by 
-    <a href=https://github.com/Lucrezia92> Lucrezia DAmico </a> 
-    hosted on
-    <a href="https://github.com/Lucrezia92?tab=repositories">GitHub</a> 
-
-
-    </footer>
-</div>
-</body>
-<script src="index.js"></script>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/Lucrezia92"> Lucrezia DAmico </a>
+        hosted on
+        <a href="https://github.com/Lucrezia92?tab=repositories">GitHub</a>
+      </footer>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
