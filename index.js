@@ -44,7 +44,13 @@ function searchCity(city) {
 }
 
 
+function getForecast(city){
+  let apiKey = "52o0ta3a4163e34b468085936bcf4c78";
+  let apiUrl=`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+  
 
+}
 
 function handleSearchSubmit(event) {
   event.preventDefault();
@@ -55,7 +61,9 @@ function handleSearchSubmit(event) {
 }
 
 
-function displayForecast() {
+function displayForecast(response) {
+
+  console.log(response.data);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -89,3 +97,4 @@ function displayForecast() {
 }
 
 displayForecast();
+getForecast("London");
