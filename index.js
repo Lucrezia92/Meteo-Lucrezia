@@ -96,5 +96,5 @@ function displayForecast(response) {
 
 }
 
-displayForecast();
-getForecast("London");
+
+getForecast();
