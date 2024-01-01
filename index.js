@@ -60,6 +60,8 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+let formElement = document.querySelector("#search-form")
+formElement.addEventListener("submit", handleSearchSubmit)
 
 function displayForecast(response) {
 
