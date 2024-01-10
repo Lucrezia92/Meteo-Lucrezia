@@ -69,24 +69,25 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  
 
   let forecastHtml = '<div class="row">';
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
 
     forecastHtml =
 
       forecastHtml + `
   <div class="col-2">
-    <div class="date">${day}</div>
+    <div class="date">Tue</div>
     <img
     src=http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png
     width="50px" style="float: left; margin-right: 15px;" />
-    <div class="weather-forecast-temp">
-      <span class="weather-temp-max">18°</span>
+    <div class="weather-forecast-temp">${Math.round(day.temperature.minimum)}°
+      
       <span class="weather-temp-min">12°</span>
       <div class="weather-temperature"></div>
+      <strong>${Math.round(day.temperature.maximum)}°</strong>
     </div>
   </div>
 `;
@@ -98,5 +99,9 @@ function displayForecast(response) {
 
 }
 
-
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu","Fri","Sat"];
+  return days[date.getDay()];
+}
 getForecast();
