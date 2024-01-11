@@ -13,6 +13,7 @@ function refreshWeather(response) {
   windspeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  getForecast(response.data.city);
 }
 
 
@@ -79,9 +80,9 @@ function displayForecast(response) {
 
       forecastHtml + `
   <div class="col-2">
-    <div class="date">Tue</div>
+    <div class="date">${formatDay(day.time)}</div>
     <img
-    src=http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png
+    src="${day.condition.icon_url}"
     width="50px" style="float: left; margin-right: 15px;" />
     <div class="weather-forecast-temp">${Math.round(day.temperature.minimum)}°
       
@@ -104,4 +105,3 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu","Fri","Sat"];
   return days[date.getDay()];
 }
-getForecast();
